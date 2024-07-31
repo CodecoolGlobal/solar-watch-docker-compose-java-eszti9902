@@ -1,0 +1,152 @@
+.form-wrapper {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to right, #f46936, #ff758f);
+}
+
+.headTitle {
+    position: absolute;
+    top: 50px;
+    left: 300px;
+    color: white;
+    font-size: 36px;
+}
+
+.formDiv {
+    position: relative;
+    height: 100%;
+    margin-left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+    background-color: rgb(255, 255, 255, 0.3);
+}
+
+.form-circle1 {
+    position: absolute;
+    top: 25%;
+    bottom: 25%;
+    width: 500px;
+    height: 500px;
+    left: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 50%;
+    background-image: linear-gradient(rgb(244, 105, 54, 0.6), rgb(255, 117, 143, 0.6));
+    box-shadow: 20px 15px 25px rgb(250, 212, 202, 0.3);
+}
+
+.form-circle2 {
+    position: absolute;
+    top: 25%;
+    bottom: 25%;
+    width: 500px;
+    height: 500px;
+    left: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 50%;
+    background-image: linear-gradient(rgb(255, 117, 143, 0.6), rgb(244, 105, 54, 0.6));
+    box-shadow: 20px 15px 25px rgb(250, 212, 202, 0.3);
+}
+
+.input-box {
+    width: 100%;
+    height: auto;
+}
+
+.linkToSignOrLogin {
+    font-weight: bolder;
+    text-decoration: none;
+    color: white;
+}
+
+.input-box input {
+    width: 100%;
+    background-color: #fad4cacc;
+    border-radius: 16px;
+    font-size: 14px;
+    padding: 10px 0px 10px 0px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: none;
+    transition: all 0.3s ease;
+    border: 2px solid #fad4ca;
+}
+
+.input-box input:hover {
+    background-color: transparent;
+}
+
+.input-box input:focus {
+    border: 2px solid white;
+    outline: none;
+}
+
+
+.input-box hr {
+    color: #fad4ca;
+    border: 2px solid #fad4ca;
+    width: 100%;
+}
+
+
+.formBtn {
+    position: relative;
+    margin-top: 25px;
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    outline: none;
+    border-radius: 20px;
+    border: 2px solid #fad4ca;
+    background: #fad4caa3;
+}
+
+.formBtn:hover {
+    background: transparent;
+}
+
+
+.formBtn {
+    position: fixed;
+    right: 435px;
+    top: 15px;
+}
+
+.createAccBtn {
+    position: absolute;
+    top: 500px;
+    right: 130px;
+}
+
+.adminBtn {
+    position: absolute;
+    top: 500px;
+    right: 120px;
+}
+
+.login {
+    position: absolute;
+    top: 500px;
+    right: 260px;
+}
+
+.backBtn {
+    position: absolute;
+    top: 500px;
+    right: 500px;
+}
