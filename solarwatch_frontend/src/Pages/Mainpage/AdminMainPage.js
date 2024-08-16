@@ -5,7 +5,7 @@ import CreateSolarReportForm from "../../Components/SolarReportForm/CreateSolarR
 import { useAuth } from "../../AuthProvider";
 
 function fetchDbData() {
-    return fetch('/solar-watch', {
+    return fetch('/api/solar-watch', {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -18,7 +18,7 @@ function fetchDbData() {
 }
 
 const deleteCity = (cityId) => {
-    return fetch(`/admin/solarwatch/delete/${cityId}`, {
+    return fetch(`/api/admin/solarwatch/delete/${cityId}`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json",
@@ -30,7 +30,7 @@ const deleteCity = (cityId) => {
 };
 
 function createSolarReport(solarReport) {
-    return fetch("/admin/solarwatch/create", {
+    return fetch("/api/admin/solarwatch/create", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

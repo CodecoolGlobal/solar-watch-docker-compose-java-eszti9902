@@ -62,14 +62,14 @@ public class WebSecurityConfig {
                 .exceptionHandling(exception -> exception.authenticationEntryPoint(unauthorizedHandler))
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth ->
-                        auth.requestMatchers("/user/promote").hasRole("ADMIN")
-                                .requestMatchers("/user/unpromote").hasRole("ADMIN")
-                                .requestMatchers("/admin/**").hasRole("ADMIN")
-                                .requestMatchers("/solarwatch/**").hasAnyRole("USER", "ADMIN")
-                                .requestMatchers("/solar-watch").hasAnyRole("USER", "ADMIN")
-                                .requestMatchers("/user/register").permitAll()
-                                .requestMatchers("/user/**").permitAll()
-                                .requestMatchers("/error").permitAll()
+                        auth.requestMatchers("/api/user/**").permitAll()
+                                .requestMatchers("/api/user/promote").hasRole("ADMIN")
+                                .requestMatchers("/api/user/unpromote").hasRole("ADMIN")
+                                .requestMatchers("/api/admin/**").hasRole("ADMIN")
+                                .requestMatchers("/api/solarwatch/**").hasAnyRole("USER", "ADMIN")
+                                .requestMatchers("/api/solar-watch").hasAnyRole("USER", "ADMIN")
+                                .requestMatchers("/api/user/register").permitAll()
+                                .requestMatchers("/api/error").permitAll()
                                 .anyRequest().authenticated()
 
                 );

@@ -4,11 +4,11 @@ import "../userForm.css"
 
 function createUser(user) {
     console.log(user);
-    return fetch('/user/register', {
+    return fetch('/api/user/register', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(user),
-    }).then((res) => res.json());
+    }).then((res) => res.text());
 }
 
 export default function RegistrationForm() {

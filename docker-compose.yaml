@@ -32,5 +32,15 @@ services:
     depends_on:
       - db
 
+  frontend:
+    build:
+      context: ./solarwatch_frontend
+      dockerfile: Dockerfile
+    container_name: solar_frontend_container
+    depends_on:
+      - backend
+    ports:
+      - "3000:3000"
+
 volumes:
   postgres_data:

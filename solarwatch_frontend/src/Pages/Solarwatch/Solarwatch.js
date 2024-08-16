@@ -5,7 +5,7 @@ import { Navigate } from "react-router-dom"
 
 
 function fetchDbData() {
-    return fetch('/solar-watch', {
+    return fetch('/api/solar-watch', {
         method: "GET",
         headers: {
             "Content-Type": "application/json",

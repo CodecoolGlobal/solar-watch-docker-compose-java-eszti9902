@@ -5,7 +5,7 @@ import { useGetToken } from "../../Hook/Hook";
 import { useAuth } from "../../AuthProvider";
 
 function logInUser(user) {
-    return fetch('/user/login', {
+    return fetch('/api/user/login', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(user),
@@ -25,39 +25,12 @@ function logInUser(user) {
             console.error("Login failed:", error.message);
             alert("An unexpected error occurred: " + error.message);
         })
-}
-
-//TODO
-//problems with admin login
-function logInAdmin(user) {
-    return fetch('/user/admin/login', {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(user),
-    }).then(res => {
-        if (!res.ok) {
-            return res.json().then(errorData => {
-                alert("Login failed: " + errorData.error);
-            });
-        }
-        return res.json();
-    })
-        .then(data => {
-            const token = data.jwt;
-            localStorage.setItem('jwtToken', token);
-            return data;
-        }).catch(error => {
-            console.error("Login failed:", error.message);
-            alert("An unexpected error occurred: " + error.message);
-        })
-
 }
 
 export default function LoginForm() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
-    const token = useGetToken();
     const [error, setError] = useState("");
     const { login } = useAuth();
 
@@ -66,33 +39,9 @@ export default function LoginForm() {
         const user = { username, password };
         logInUser(user)
             .then((user) => {
-                const token = user.jwt;
-                console.log(user)
-                console.log(token);
-                localStorage.setItem('jwtToken', token)
-                localStorage.setItem('user', JSON.stringify(user))
-                login({ user })
+                login(user)
                 navigate('/')
             })
-    }
-
-    const handleAdminLogIn = (e) => {
-        e.preventDefault();
-        const user = { username, password };
-        try {
-            logInAdmin(user)
-                .then((user) => {
-                    const token = user.jwt;
-                    console.log(user)
-                    console.log(token);
-                    localStorage.setItem('jwtToken', token)
-                    localStorage.setItem('user', JSON.stringify(user))
-                    login({ user })
-                    navigate('/admin/solarwatch')
-                })
-        } catch (error) {
-            setError(error.message)
-        }
     }
 
     const handleGoBack = () => {
@@ -132,7 +81,7 @@ export default function LoginForm() {
                         <hr></hr>
                     </div>
                     <button className="formBtn login" type="submit" onClick={handleUserLogin}>Log In</button>
-                    <button className="formBtn adminBtn" type="submit" onClick={handleAdminLogIn}>Log In as Admin</button>
+                    {/* <button className="formBtn adminBtn" type="submit" onClick={handleAdminLogIn}>Log In as Admin</button> */}
                     <button className="formBtn backBtn" onClick={handleGoBack} type="button">Back</button>
                     <p className="linkToSignUp">Don't have an account? <Link className="linkToSignOrLogin" to={"/user/register"}>Sign up now</Link></p>
                 </form>

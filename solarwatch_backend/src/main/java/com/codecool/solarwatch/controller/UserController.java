@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/api/user")
 public class UserController {
 
     private final UserService userService;
@@ -59,25 +59,6 @@ public class UserController {
         return ResponseEntity
                 .ok(new JwtResponse(jwt, userDetails.getUsername(), roleAuthority.getAuthority()));
     }
-
-    @PostMapping("/admin/login")
-    public ResponseEntity<?> authenticateAdmin(@RequestBody UserRequest loginRequest) {
-        Authentication authentication = authenticationManager
-                .authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
-
-        SecurityContextHolder.getContext().setAuthentication(authentication);
-        String jwt = jwtUtils.generateJwtToken(authentication);
-
-        User userDetails = (User) authentication.getPrincipal();
-        GrantedAuthority roleAuthority = userDetails.getAuthorities().stream().findFirst().orElse(null);
-
-        if (roleAuthority != null && roleAuthority.getAuthority().equals("ROLE_ADMIN")) {
-            JwtResponse jwtResponse = new JwtResponse(jwt, userDetails.getUsername(), roleAuthority.getAuthority());
-            return ResponseEntity.ok(jwtResponse);
-        }
-        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
-    }
-
 
     @PutMapping("/promote/{username}")
     public ResponseEntity<Void> promoteUserToAdmin(@PathVariable String username) {

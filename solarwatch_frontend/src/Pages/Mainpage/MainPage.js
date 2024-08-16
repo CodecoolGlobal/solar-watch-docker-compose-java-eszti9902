@@ -5,8 +5,9 @@ import { useAuth } from "../../AuthProvider.jsx";
 
 export default function MainPage() {
     const navigate = useNavigate();
-    const token = useGetToken();
     const { logout } = useAuth();
+    const { user } = useAuth()
+
 
     const registerNewUser = () => {
         navigate('/user/register')
@@ -23,20 +24,25 @@ export default function MainPage() {
 
     const logOutUser = () => {
         console.log(localStorage.getItem("jwtToken"));
-        localStorage.removeItem("jwtToken")
-        localStorage.removeItem("user")
+
         logout();
         console.log(localStorage.getItem("jwtToken"));
     }
+
+    const handleAdminDashboardNavigation = () => {
+        navigate("/admin/solarwatch")
+    }
+
 
     return (
         <div className="wrapper">
             <div className="mainpage-circle"></div>
             <h1 className="title">Solar-Watch</h1>
+            {user?.role === "ROLE_ADMIN" && <button className="adminBtn" onClick={handleAdminDashboardNavigation}>Admin dashboard</button>}
             <button className="solarBtn" onClick={searchForSolarData}>Search for solar data</button>
             <button className="registerBtn" onClick={registerNewUser}>Register!</button>
             <button className="loginBtn" onClick={loginUser}>Log In</button>
-            <button className="logOutBtn" onClick={logOutUser}>Log Out</button>
+            {user && <button className="logOutBtn" onClick={logOutUser}>Log Out</button>}
         </div>
     )
 }

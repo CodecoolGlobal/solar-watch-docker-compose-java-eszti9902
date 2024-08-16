@@ -32,20 +32,6 @@ public class OpenSolarWatchService {
         this.sunriseSunsetRepository = sunriseSunsetRepository;
     }
 
-//    public SolarReport getCurrentSolarReportForGivenCity(String city, String date) throws WrongUrlException {
-//        String coordinatesUrl = String.format("http://api.openweathermap.org/geo/1.0/direct?q=%s&limit=1&appid=%s", city, API_KEY);
-//        LatitudeLongitudeReport[] coordinateResponse = restTemplate.getForObject(coordinatesUrl, LatitudeLongitudeReport[].class);
-//        assert coordinateResponse != null;
-//        if (coordinateResponse.length == 0) {
-//            throw new WrongUrlException();
-//        }
-//        String solarUrl = String.format("https://api.sunrise-sunset.org/json?lat=%f&lng=%f&date=%s", coordinateResponse[0].lat(), coordinateResponse[0].lon(), date);
-//        OpenSolarReport solarReportResponse = restTemplate.getForObject(solarUrl, OpenSolarReport.class);
-//        assert solarReportResponse != null;
-//        logger.info("Response from API: {}", solarReportResponse);
-//        return new SolarReport(city, coordinateResponse[0].lat(), coordinateResponse[0].lon(), date, solarReportResponse.results().sunrise(), solarReportResponse.results().sunset());
-//    }
-
     public List<SolarReport> getAllSolarReport() {
         List<City> cities = cityRepository.findAll();
         List<SunriseSunset> sunriseSunsets = sunriseSunsetRepository.findAll();

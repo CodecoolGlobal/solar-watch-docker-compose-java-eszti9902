@@ -15,6 +15,7 @@ import java.time.format.DateTimeParseException;
 import java.util.List;
 
 @RestController
+@RequestMapping("/api")
 public class SolarWatchController {
     private final OpenSolarWatchService openSolarWatchService;
 

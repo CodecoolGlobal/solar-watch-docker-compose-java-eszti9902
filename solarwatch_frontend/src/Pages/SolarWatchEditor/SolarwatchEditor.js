@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import CityUpdaterForm from "../../Components/CityUpdaterForm/CityUpdaterForm";
 
 function fetchCity(cityId) {
-    return fetch(`/admin/solarwatch/${cityId}`, {
+    return fetch(`/api/admin/solarwatch/${cityId}`, {
         method: "GET",
         headers: {
             "Authorization": "Bearer " + localStorage.getItem("jwtToken")
@@ -12,7 +12,7 @@ function fetchCity(cityId) {
 }
 
 const updateCity = (cityId, cityName) => {
-    return fetch(`/admin/solarwatch/edit/${cityId}`, {
+    return fetch(`/api/admin/solarwatch/edit/${cityId}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
