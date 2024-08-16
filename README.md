@@ -37,7 +37,7 @@ SolarWatch is a full-stack web application that allows users to retrieve sunrise
 
 ## Setup and Installation
 ### - Local Setup
-- Clone the repository: `git clone https://github.com/CodecoolGlobal/solar-watch-docker-compose-java-your_username`
+- Clone the repository: `git clone https://github.com/CodecoolGlobal/solar-watch-docker-compose-java-eszti9902`
 - Navigate to the project directory: `cd solarwatch`
 - Backend Setup:
   - Navigate to the solarwatch_backend directory.
