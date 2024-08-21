@@ -1,0 +1,84 @@
+.wrapper {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(#3f0e02, #c02844);
+
+}
+
+.selectdiv {
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.selLabel {
+    /* margin-top: 25px; */
+    width: 80%;
+}
+
+.selLabel label {
+    font-size: larger;
+}
+
+.selectdiv select {
+    padding: 10px 40px 10px 5px;
+    background: #fad4caa3;
+    /* border */
+}
+
+.selectdiv label {
+    color: white;
+    padding-right: 30px;
+}
+
+.circle {
+    position: relative;
+    top: 1.6rem;
+    width: 60vw;
+    height: 60vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 50%;
+    background-image: linear-gradient(to left, #f46936, #ff758f);
+    box-shadow: 20px 15px 25px rgb(250, 212, 202, 0.3);
+    padding: 25px;
+}
+
+.cityDiv {
+    position: absolute;
+    width: 100%;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    top: 20%;
+}
+
+.sunrise {
+    font-size: x-large;
+}
+
+.sunset {
+    font-size: x-large;
+}
+
+.city {
+    font-size: xx-large
+}
+
+
+/* padding: 20px;
+border: 2px solid #fad4ca;
+background: #ffffff61;
+color: white;
+width: 30vw;
+height: 30vw;
+border-radius: 50%; */

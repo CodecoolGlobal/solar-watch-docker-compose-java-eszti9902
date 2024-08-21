@@ -79,11 +79,12 @@ export default function LoginForm() {
                             id="password"
                         />
                         <hr></hr>
+                        <p className="linkToSignUp">Don't have an account? <Link className="linkToSignOrLogin" to={"/user/register"}>Sign up now</Link></p>
                     </div>
-                    <button className="formBtn login" type="submit" onClick={handleUserLogin}>Log In</button>
-                    {/* <button className="formBtn adminBtn" type="submit" onClick={handleAdminLogIn}>Log In as Admin</button> */}
-                    <button className="formBtn backBtn" onClick={handleGoBack} type="button">Back</button>
-                    <p className="linkToSignUp">Don't have an account? <Link className="linkToSignOrLogin" to={"/user/register"}>Sign up now</Link></p>
+                    <div className="formBtnDiv">
+                        <button className="formBtn backBtn" onClick={handleGoBack} type="button">Back</button>
+                        <button className="formBtn login" type="submit" onClick={handleUserLogin}>Log In</button>
+                    </div>
                 </form>
             </div>
         </div>

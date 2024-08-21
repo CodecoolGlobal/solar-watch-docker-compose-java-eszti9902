@@ -1,0 +1,24 @@
+table {
+    margin-top: 25px;
+    width: 80%;
+    /* Optional, for demo purposes */
+    border-collapse: collapse;
+    /* Merges borders */
+}
+
+thead {
+    background-color: #f46936;
+}
+
+td {
+    border: 2px solid #f46936;
+    /* Adds a single border around each cell */
+    padding: 8px;
+    /* Optional, adds spacing inside cells */
+}
+
+th {
+    border: 2px solid #f46936;
+    /* Same border for header cells */
+    padding: 8px;
+}

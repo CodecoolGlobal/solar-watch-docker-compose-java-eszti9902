@@ -38,11 +38,16 @@ export default function MainPage() {
         <div className="wrapper">
             <div className="mainpage-circle"></div>
             <h1 className="title">Solar-Watch</h1>
-            {user?.role === "ROLE_ADMIN" && <button className="adminBtn" onClick={handleAdminDashboardNavigation}>Admin dashboard</button>}
-            <button className="solarBtn" onClick={searchForSolarData}>Search for solar data</button>
-            <button className="registerBtn" onClick={registerNewUser}>Register!</button>
-            <button className="loginBtn" onClick={loginUser}>Log In</button>
-            {user && <button className="logOutBtn" onClick={logOutUser}>Log Out</button>}
+            <div className="btnDiv">
+                {user?.role === "ROLE_ADMIN" && <button className="adminBtn" onClick={handleAdminDashboardNavigation}>Admin dashboard</button>}
+                <button className="solarBtn" onClick={searchForSolarData}>Search for solar data</button>
+                {user ? <button className="logOutBtn" onClick={logOutUser}>Log Out</button> : (
+                    <>
+                        <button className="registerBtn" onClick={registerNewUser}>Register</button>
+                        <button className="loginBtn" onClick={loginUser}>Log In</button>
+                    </>
+                )}
+            </div>
         </div>
     )
 }

@@ -2,13 +2,13 @@
     position: relative;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(to right, #f46936, #ff758f);
+    background: linear-gradient(#3f0e02, #c02844);
 }
 
 .headTitle {
-    position: absolute;
-    top: 50px;
-    left: 300px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
     color: white;
     font-size: 36px;
 }
@@ -101,7 +101,7 @@
 
 .formBtn {
     position: relative;
-    margin-top: 25px;
+    /* margin-top: 25px; */
     min-width: 130px;
     height: 40px;
     color: #fff;
@@ -121,32 +121,29 @@
 }
 
 
-.formBtn {
+/* .formBtn {
     position: fixed;
     right: 435px;
     top: 15px;
-}
+} */
 
-.createAccBtn {
+/* .createAccBtn {
     position: absolute;
     top: 500px;
     right: 130px;
+} */
+
+.formBtnDiv {
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
 }
 
-.adminBtn {
-    position: absolute;
-    top: 500px;
-    right: 120px;
-}
-
-.login {
-    position: absolute;
-    top: 500px;
-    right: 260px;
-}
-
-.backBtn {
+/* .backBtn {
     position: absolute;
     top: 500px;
     right: 500px;
-}
+} */

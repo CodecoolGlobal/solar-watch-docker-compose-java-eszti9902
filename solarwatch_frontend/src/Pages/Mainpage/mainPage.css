@@ -1,23 +1,27 @@
 .wrapper {
-    position: relative;
+    position: fixed;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(#f46936, #ff758f);
+    background: linear-gradient(#3f0e02, #c02844);
 
 }
 
 .mainpage-circle {
     position: relative;
-    top: 50px;
-    width: 600px;
-    height: 600px;
+    top: 5rem;
+    width: 60vw;
+    height: 60vw;
+    display: flex;
     align-items: center;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
     border-radius: 50%;
     background-image: linear-gradient(to left, #f46936, #ff758f);
     box-shadow: 20px 15px 25px rgb(250, 212, 202, 0.3);
+    padding: 25px;
 }
 
 svg {
@@ -28,16 +32,17 @@ svg {
 .title {
     position: absolute;
     top: 50px;
-    left: 300px;
+    left: 20%;
     color: white;
     font-size: 74px;
-
+    margin-right: auto;
 }
 
 .solarBtn,
 .registerBtn,
 .loginBtn,
-.logOutBtn {
+.logOutBtn,
+.adminBtn {
     min-width: 130px;
     height: 40px;
     color: #fff;
@@ -55,36 +60,21 @@ svg {
 .solarBtn:hover,
 .registerBtn:hover,
 .loginBtn:hover,
-.logOutBtn:hover {
+.logOutBtn:hover,
+.adminBtn:hover {
     background: transparent;
-}
-
-
-.solarBtn {
-    position: fixed;
-    right: 435px;
-    top: 15px;
-}
-
-.registerBtn {
-    position: fixed;
-    right: 295px;
-    top: 15px;
-}
-
-.loginBtn {
-    position: fixed;
-    right: 155px;
-    top: 15px;
-}
-
-.logOutBtn {
-    position: fixed;
-    right: 15px;
-    top: 15px;
 }
 
 .solarTable {
     padding: 0.5rem;
     width: 100%;
+}
+
+.btnDiv {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-evenly;
 }

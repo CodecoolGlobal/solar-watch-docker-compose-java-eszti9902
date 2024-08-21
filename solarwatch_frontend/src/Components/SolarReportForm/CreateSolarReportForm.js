@@ -1,4 +1,5 @@
 import { useState } from "react"
+import "./solarReportForm.css"
 
 export default function CreateSolarReportForm({ onSave }) {
     const [cityName, setCityName] = useState("");
@@ -10,7 +11,7 @@ export default function CreateSolarReportForm({ onSave }) {
     }
 
     return (
-        <div>
+        <div className="reportform">
             <form onSubmit={handleCreateNewSolarReport}>
                 <input
                     type="text"

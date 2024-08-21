@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useGetToken } from "../../Hook/Hook"
-import { Navigate } from "react-router-dom"
-
+import { Navigate, useNavigate } from "react-router-dom"
+import "./solar-watch.css"
 
 
 function fetchDbData() {
@@ -20,7 +20,7 @@ export default function Solarwatch() {
     const [solarReports, setSolarReports] = useState([]);
     const [loading, setLoading] = useState(true);
     const token = useGetToken();
-
+    const navigate = useNavigate()
 
 
     useEffect(() => {
@@ -37,6 +37,10 @@ export default function Solarwatch() {
         setSearchedCity(selectedCity)
     }
 
+    const handleGoBack = () => {
+        navigate("/")
+    }
+
 
     if (!token) {
         alert('You do not have acces to this page, please log in to continue...')
@@ -48,21 +52,29 @@ export default function Solarwatch() {
     }
 
     return (
-        <div>
-            <label htmlFor="city">Select city:</label>
-            <select id="city" value={cityName} onChange={handleSelectChange}>
-                <option value={""} >--Select city--</option>
-                {solarReports.map((solarReport, index) => (
-                    <option key={index} value={solarReport.city} onChange={(e) => setCityName(e.target.value)}>{solarReport.city}{' on ' + solarReport.date}</option>
-                ))}
-            </select>
-            {searchedCity ?
-                <div>
-                    <p>{`In the City of ${searchedCity.city} on ${searchedCity.date}`}</p>
-                    <p>{`The sun rises at: ${searchedCity.sunrise}`}</p>
-                    <p>{`The sun sets at: ${searchedCity.sunset}`}</p>
+        <div className="wrapper">
+            <div className="selectdiv">
+                <div className="selLabel">
+                    <label htmlFor="city">Select city:</label>
+                    <select id="city" value={cityName} onChange={handleSelectChange}>
+                        <option value={""} >--Select city--</option>
+                        {solarReports.map((solarReport, index) => (
+                            <option key={index} value={solarReport.city} onChange={(e) => setCityName(e.target.value)}>{solarReport.city}{' on ' + solarReport.date}</option>
+                        ))}
+                    </select>
                 </div>
-                : ""}
+
+                <button className="formBtn backBtn" onClick={handleGoBack} type="button">Back</button>
+            </div>
+            <div className="circle">
+                {searchedCity ?
+                    <div className="cityDiv">
+                        <p className="city">{`In the City of ${searchedCity.city} on ${searchedCity.date}`}</p>
+                        <p className="sunrise">{`The sun rises at: ${searchedCity.sunrise}`}</p>
+                        <p className="sunset">{`The sun sets at: ${searchedCity.sunset}`}</p>
+                    </div>
+                    : ""}
+            </div>
         </div>
     )
 }

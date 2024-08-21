@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import SolarTable from "../../Components/AdminCityTable/SolarTable";
 import CreateSolarReportForm from "../../Components/SolarReportForm/CreateSolarReportForm";
 import { useAuth } from "../../AuthProvider";
+import "./adminpage.css"
 
 function fetchDbData() {
     return fetch('/api/solar-watch', {
@@ -84,10 +85,17 @@ export default function AdminMainPage() {
         })
     }
 
+    const handleGoBack = () => {
+        navigate("/")
+    }
+
     return (
         <>
-            <button type="button" onClick={setIsCreationToActive}>Create new Solar Report</button>
-            <button onClick={logOutUser}>Log Out</button>
+            <div className="buttons">
+                <button className="createNew" type="button" onClick={setIsCreationToActive}>Create new Solar Report</button>
+                <button className="back" onClick={handleGoBack} type="button">Back</button>
+                <button className="logOut" onClick={logOutUser}>Log Out</button>
+            </div>
             <SolarTable
                 solarReports={solarReports}
                 onDelete={handleDeleteCity}

@@ -55,9 +55,11 @@ export default function RegistrationForm() {
                         />
                         <hr></hr>
                     </div>
-                    <button className="formBtn createAccBtn" type="submit">Create An Account</button>
-                    <button className="formBtn backBtn" onClick={handleGoBack} type="button">Back</button>
                     <p className="linkToLogin">Already have an account?<Link className="linkToSignOrLogin" to={"/user/login"}>Log in</Link></p>
+                    <div className="formBtnDiv">
+                        <button className="formBtn backBtn" onClick={handleGoBack} type="button">Back</button>
+                        <button className="formBtn createAccBtn" type="submit">Create An Account</button>
+                    </div>
                 </form>
             </div>
         </div>

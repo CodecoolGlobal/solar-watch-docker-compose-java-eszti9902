@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./updateForm.css"
 
 export default function CityUpdaterForm({ onSave, city, onCancel }) {
     const [cityName, setCityName] = useState(city.cityName);
@@ -11,7 +12,7 @@ export default function CityUpdaterForm({ onSave, city, onCancel }) {
     };
 
     return (
-        <form className="EmployeeForm" onSubmit={onSubmit}>
+        <form className="cityUpdateForm" onSubmit={onSubmit}>
             <div className="control">
                 <label htmlFor="cityName">New city name:</label>
                 <input
@@ -19,10 +20,6 @@ export default function CityUpdaterForm({ onSave, city, onCancel }) {
                     onChange={(e) => setCityName(e.target.value)}
                     id="cityName"
                 />
-            </div>
-
-
-            <div className="buttons">
                 <button type="submit">Update City</button>
                 <button type="button" onClick={onCancel}>Cancel</button>
             </div>
