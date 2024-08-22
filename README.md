@@ -2,16 +2,20 @@
 SolarWatch is a full-stack web application that allows users to retrieve sunrise and sunset data for a specific city and date. The data is fetched from the database, but if the data is not available, the application retrieves it from an external API. The application also supports user roles, allowing administrators to modify the data stored in the database.
 
 ## Features
+### Main Page
+- Simple main page with registration and login possibilities.
+  - Visual: ![MainPage](./readme_images/sw_mainpage.png)
 ### User Registration and Login:
 - Users can register and log in.
-- Administrators have special permissions.
-
+  - Visual: ![LogIn](./readme_images/sw_login.png)
 ### Sunrise and Sunset Data Retrieval:
 - Users can search for sunrise and sunset data for a specific city and date.
+  - Visual: ![Data](./readme_images/sw_dataretrieval.png)
 - If the data is not available in the database, the application fetches it from an external API.
 
 ### Database Management (Administrators Only):
 - Administrators can modify the sunrise and sunset data stored in the database.
+  - Visual: ![MainPage](./readme_images/sw_admin.png)
 
 ## Technology Stack
 
